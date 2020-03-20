@@ -1,6 +1,6 @@
 Ext.ns('App');
-Ext.onReady(function(){
-  var myApp = Ext.create({
+Ext.onReady(function () {
+  Ext.create({
     xtype: 'window',
     items:[
         {
@@ -43,10 +43,7 @@ Ext.onReady(function(){
             wnd4.show()
           }
         },
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
+
         {
           xtype: 'button',
           text:'H-Box Layout',
@@ -70,12 +67,7 @@ Ext.onReady(function(){
             var wnd7 = App.ColumnLayout.createColumnLayout()
             wnd7.show()
           }
-        }
->>>>>>> Step 2
->>>>>>> Step 1 and 2
-        
+        }    
     ]
-  })
-  myApp.show()
-
+  }).show()
 });

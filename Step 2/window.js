@@ -31,7 +31,8 @@ App.window.createWindow = function(){
 
     var sf = {
         fieldLabel: 'SliderField',
-        xtype:'sliderfield'
+        xtype:'sliderfield',
+        width: 100
     }
    
 
@@ -40,7 +41,22 @@ App.window.createWindow = function(){
         xtype:'numberfield'
     }
 
+    var df = {
+        fieldLabel: 'Display',
+        xtype: 'displayfield',
+        name: 'dp1',
+        width: 100
+    }
 
+    var btn = {
+        xtype: 'button',
+        text: 'banan',
+        handler: function () {
+            fp.getForm().setValues({
+                dp1: 'I`m display 1'
+            })
+        }
+    }
 
     var fp = new Ext.FormPanel({
         renderTo: Ext.getBody(),
@@ -57,14 +73,7 @@ App.window.createWindow = function(){
         {
             xtype: 'panel',
             layout: 'form',
-<<<<<<< HEAD
             flex:1,
-=======
-<<<<<<< HEAD
-            flex:1,
-=======
->>>>>>> Step 2
->>>>>>> Step 1 and 2
             items:[sf]
         },
         {
@@ -72,6 +81,12 @@ App.window.createWindow = function(){
             layout: 'form',
             flex:1,
             items:[nf]
+        },
+        {
+            xtype: 'panel',
+            layout: 'form',
+            flex:1,
+            items:[df,btn]
         }
         ]
     });
@@ -84,10 +99,9 @@ App.window.createWindow = function(){
         layout : 'fit',
         border : false,
         frame : true,
-        height : 400,
-        width : 250,
-        items : [fp]
-        ,
+        height : 500,
+        width : 450,
+        items : [fp],
         buttons : [ {
             text : 'Ok',
             handler : function() {
