@@ -57,7 +57,14 @@ App.window.createWindow = function(){
         {
             xtype: 'panel',
             layout: 'form',
+<<<<<<< HEAD
             flex:1,
+=======
+<<<<<<< HEAD
+            flex:1,
+=======
+>>>>>>> Step 2
+>>>>>>> Step 1 and 2
             items:[sf]
         },
         {
