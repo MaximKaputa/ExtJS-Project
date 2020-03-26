@@ -16,15 +16,24 @@ Ext.onReady(function () {
 
               }
           },
-         //  {
-         //      xtype: 'button',
-         //      text: 'Panel',
-         //      handler: function () {
-         //          var panels =App.Panels.createPanel()
-         //          panels.show()
-         //
-         //      }
-         // }
+          {
+              xtype: 'button',
+              text: 'Grid Panel',
+              handler: function () {
+                  var wnd1 = App.gridPanel.createGridPanel()
+                  wnd1.show()
+         
+              }
+         },
+         {
+            xtype: 'button',
+            text: 'JsonStore Panel',
+            handler: function () {
+                var wnd2 = App.jsonStore.createJsonStore()
+                wnd2.show()
+       
+            }
+       }
       ]
   }).show()
 })
