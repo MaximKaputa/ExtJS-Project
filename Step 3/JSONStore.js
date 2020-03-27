@@ -29,7 +29,6 @@ request.onload = function(){
 //     }
 // });
  
-<<<<<<< HEAD
 var peopleJsonStore = new Ext.data.JsonStore({
     url: 'https://swapi.co/api/people',
     root: 'results',
@@ -197,29 +196,29 @@ var peopleJsonStore = new Ext.data.JsonStore({
      setTimeout(function () {
         console.log(jsonStore.data)
      },5000)
-    var jsonStore = new Ext.data.JsonStore({
-        //url: 'https://swapi.co/api/people',
-        root: 'results',
-        fields:[
-            'name'
-        ],
-        baseParams : {
-                start : 0,
-                limit : 100
-            },
-        remoteSort : true,
-        sortInfo: {},
-        proxy : new Ext.data.HttpProxy({
-            url : 'https://swapi.co/api/people'
-        }),
-        listeners:{
-            load: function (store) {
-                console.log('loaded',arguments)
-                console.log('1')
-            }
-        }
-     });
-     jsonStore.load()
+    // var jsonStore = new Ext.data.JsonStore({
+    //     //url: 'https://swapi.co/api/people',
+    //     root: 'results',
+    //     fields:[
+    //         'name'
+    //     ],
+    //     baseParams : {
+    //             start : 0,
+    //             limit : 100
+    //         },
+    //     remoteSort : true,
+    //     sortInfo: {},
+    //     proxy : new Ext.data.HttpProxy({
+    //         url : 'https://swapi.co/api/people'
+    //     }),
+    //     listeners:{
+    //         load: function (store) {
+    //             console.log('loaded',arguments)
+    //             console.log('1')
+    //         }
+    //     }
+    //  });
+    //  jsonStore.load()
     // console.log(request.response)
     //  var bb = JSON.parse(JSON.stringify(request.response.results))
     //  console.log( bb)
