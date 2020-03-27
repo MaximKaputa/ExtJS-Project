@@ -31,7 +31,6 @@ Ext.onReady(function () {
             handler: function () {
                 var wnd2 = App.jsonStore.createJsonStore()
                 wnd2.show()
-       
             }
        }
       ]
