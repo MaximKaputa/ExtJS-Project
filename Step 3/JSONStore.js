@@ -175,7 +175,7 @@ var peopleJsonStore = new Ext.data.JsonStore({
          columns: clm2,
          listeners:{
              render: function(){
-               // planetJsonStore.load()
+                planetJsonStore.load()
              }
          }
       });
