@@ -1,33 +1,15 @@
 Ext.ns('App.jsonStore');
 
-var request = new XMLHttpRequest();
-request.open('GET', 'https://swapi.co/api/people/ ');
-request.responseType = 'json';
-request.send();
-
-
-request.onload = function(){
-    console.log(request)
-}
 // var request = new XMLHttpRequest();
 // request.open('GET', 'https://swapi.co/api/people/ ');
 // request.responseType = 'json';
 // request.send();
 
 
+// request.onload = function(){
+//     console.log(request)
+// }
 
-
-
-// Ext.Ajax.request({
-//     url: 'https://swapi.co/api/people',
-//     success: function(response, options){
-//      var json  = JSON.parse(response.responseText)
-//         console.log(json.results);
-//     },
-//     failure: function(response, options){
-//         alert("Ошибка: " + response.statusText);
-//     }
-// });
  
 var peopleJsonStore = new Ext.data.JsonStore({
     url: 'https://swapi.co/api/people',
@@ -180,8 +162,7 @@ var peopleJsonStore = new Ext.data.JsonStore({
           },
      ]
             
-    
-     planetJsonStore.load()
+     
 
       var grid = Ext.create({
         xtype: 'grid',
@@ -191,11 +172,33 @@ var peopleJsonStore = new Ext.data.JsonStore({
          height: 350,
          width: 900,
          stateful: true,
-         columns: clm2
+         columns: clm2,
+         listeners:{
+             render: function(){
+               // planetJsonStore.load()
+             }
+         }
       });
-     setTimeout(function () {
-        console.log(jsonStore.data)
-     },5000)
+      peopleJsonStore.load()
+
+      var btn = Ext.create({
+        xtype: 'button',
+        text: 'people',
+        listeners:{
+            click: function(){
+               grid.store = peopleJsonStore
+               grid.columns = clm
+               grid.render()
+               console.log(grid.store)
+               console.log(grid.columns)
+            }
+        }
+    })
+
+    //  setTimeout(function () {
+    //     console.log(grid.store)
+    //     console.log(grid.columns)
+    //  },5000)
     // var jsonStore = new Ext.data.JsonStore({
     //     //url: 'https://swapi.co/api/people',
     //     root: 'results',
@@ -225,13 +228,13 @@ var peopleJsonStore = new Ext.data.JsonStore({
 
      //  var grid = Ext.create({
      //  });
-
+      console.log(grid.store)
       var gridWin = Ext.create({
          xtype: 'window',
-         height: 400,
+         height: 500,
          layout: 'form',
 
-          items: grid
+          items: [grid,btn]
          // items: grid
 
      })
